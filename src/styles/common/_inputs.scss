@@ -1,0 +1,52 @@
+input, select {
+    @apply bg-gray-100 py-2 px-3 my-2 rounded-lg w-full;
+    position: relative;
+}
+
+select {
+    cursor: pointer;
+}
+
+input[type='checkbox'] {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+input[type='checkbox'] + label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+}
+
+[type='checkbox'] + label::before {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 1.5em; 
+    height: 1.5em;
+    border: 2px solid #85C7D3;
+    background: transparent;
+    border-radius: 4px;           
+}
+
+[type='checkbox']:checked + label::before {
+    background: #85C7D3
+}
+
+[type="checkbox"]:checked:focus + label::before,
+[type="checkbox"]:not(:checked):focus + label::before,
+[type='checkbox'] + label:hover::before {
+    border: 2px solid #000;
+}
+
+[type="checkbox"]:checked + label::after {
+    content: url(/img/check.svg);
+    position: absolute;
+    top: 0; 
+    left: calc(.75em - 6px);
+}
+
+
+
