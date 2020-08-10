@@ -3,7 +3,7 @@ import React from 'react'
 import SearchBox from "./SearchBox"
 
 const Hero = ({ title, subheading, image}) => (
-    <section className='relative min-h-110vh' style={{
+    <section id='home' className='relative min-h-130vh' style={{
         backgroundImage: `url(${
             !!image.childImageSharp ? image.childImageSharp.fluid.src : image
             })`,
@@ -16,7 +16,7 @@ const Hero = ({ title, subheading, image}) => (
             <h3 className="">{subheading} </h3>
         </div>
         <SearchBox />
-        <div>Flying texts</div>
+        {/* <div>Flying texts</div> */}
     </section>
 )
 

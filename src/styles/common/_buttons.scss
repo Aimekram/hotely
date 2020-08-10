@@ -1,5 +1,5 @@
 .btn {
-    @apply text-white font-bold py-4 px-6 my-4 rounded-lg cursor-pointer;
+    @apply text-white font-bold py-4 px-8 my-4 rounded-lg cursor-pointer;
 }
 
 .btn-orange {
@@ -11,10 +11,9 @@
 }
 
 .btn-transparent {
-    @apply bg-blue-500;
+    @apply bg-transparent border border-solid border-white;
 }
 
-
 .btn-transparent:hover {
-    @apply bg-blue-700;
+    @apply bg-gray-100;
 }

@@ -44,7 +44,7 @@ const SearchBox = () => {
     const { destination, checkInDate, checkOutDate, guestsNr, payOnCheckIn } = state
 
     return (
-        <form className = 'w-full max-w-md bg-white rounded-xl px-8 pt-8 pb-10 relative mt-10 md:mt-0 md:absolute mx-auto md:top-1/5 md:left-1/10'>
+        <form className = 'w-full max-w-md bg-white rounded-xl px-8 pt-8 pb-10 relative mt-20 md:mt-0 md:absolute mx-auto md:top-1/5 md:left-1/10'>
             <div className='mb-4'>
                 <label htmlFor='destination'>Where do you go?</label>
                 <div className='relative'>

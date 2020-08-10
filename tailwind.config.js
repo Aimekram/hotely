@@ -10,6 +10,9 @@ module.exports = {
         gray: {
           '100':'rgba(241, 241, 241, .5)',
         },
+        skyblue: {
+          '500': '#85C7D3',
+        },
       },
       borderRadius: {
         'xl': '1rem',
@@ -19,7 +22,10 @@ module.exports = {
         '1/10': '10%', 
       },
       minHeight: {
-        '110vh': '110vh'
+        '130vh': '130vh',
+      },
+      maxWidth: {
+        '4/5': '80%',
       },
     },
   },
