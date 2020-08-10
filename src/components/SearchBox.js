@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 
+// get dates for inputs placeholders
 const getDate = (day) => {
     const currentDate = new Date()
     switch (day) {
@@ -20,6 +21,7 @@ const getDate = (day) => {
     }
 }
 
+// helpers for controlling form's elements
 const initialState = {
     destination: '',
     checkInDate: getDate('today'),
@@ -42,28 +44,28 @@ const SearchBox = () => {
     const { destination, checkInDate, checkOutDate, guestsNr, payOnCheckIn } = state
 
     return (
-        <form className = 'w-full max-w-md bg-white rounded-xl px-8 pt-8 pb-10 mb-4'>
+        <form className = 'w-full max-w-md bg-white rounded-xl px-8 pt-8 pb-10 relative mt-10 md:mt-0 md:absolute mx-auto md:top-1/5 md:left-1/10'>
             <div className='mb-4'>
-                <label htmlFor='destination'>Where you go?</label>
+                <label htmlFor='destination'>Where do you go?</label>
                 <div className='relative'>
                     <input id='destination' name='destination' type='text' placeholder='try "Singapore"' value={destination} onChange={onChange} />
-                    <img src='/img/map-pin.svg' alt='location icon' className='absolute right-0 top-0 my-6 mx-4' />
+                    <img src='/img/map-pin.svg' alt='location icon' className='absolute right-0 top-0 m-4' />
                 </div>
             </div>
-            <div className='mb-4 flex'>
-                <div className='mr-4'>
+            <div className='mb-4 flex flex-col sm:flex-row flex-wrap'>
+                <div className='flex flex-col flex-no-wrap sm:mr-4'>
                     <label htmlFor='checkInDate'>Check in</label>
                     <input id='checkInDate' name='checkInDate' type='date' min={getDate('today')} value={checkInDate} onChange={onChange} />
                 </div>
-                <div>
+                <div className='flex flex-col flex-no-wrap'>
                     <label htmlFor='checkOutDate'>Check out</label>
                     <input id='checkOutDate' name='checkOutDate' type='date' min={getDate('tomorrow')} value={checkOutDate} onChange={onChange} />
                 </div>
             </div>
             <div className='mb-4'>
                 <label htmlFor='guestsNr'>Guests</label>
-                <select id='guestsNr' name='guestsNr' defaultValue='How many guest ?' value={guestsNr} onChange={onChange}>
-                    <option value='' disabled hidden>How many guest ?</option>
+                <select id='guestsNr' name='guestsNr' defaultValue='How many guests?' value={guestsNr} onChange={onChange}>
+                    <option value='' hidden>How many guests?</option>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>

@@ -13,7 +13,14 @@ module.exports = {
       },
       borderRadius: {
         'xl': '1rem',
-      }
+      },
+      inset: {
+        '1/5': '20%',
+        '1/10': '10%', 
+      },
+      minHeight: {
+        '110vh': '110vh'
+      },
     },
   },
   variants: {},

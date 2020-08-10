@@ -7,6 +7,10 @@ select {
     cursor: pointer;
 }
 
+input[type='date'] {
+    max-width: 200px;
+}
+
 input[type='checkbox'] {
     opacity: 0;
     height: 0;
