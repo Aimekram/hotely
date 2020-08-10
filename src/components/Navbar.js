@@ -3,22 +3,22 @@ import { Link } from 'gatsby'
 
 const Navbar = () => {
   const [ active, setActive ] = useState(false)
-  const [ navBarActiveClass, setNavBarActiveClass ] = useState('')
+  const [ navBarActiveClass, setNavBarActiveClass ] = useState(false)
   const [ scrolled, setScrolled ] = useState(false)
 
   const toggleHamburger = () => setActive(!active)
 
-  const handleScroll = (e) => window.scrollY >= window.innerHeight*.2 ? setScrolled(true) : setScrolled(false) 
+  const handleScroll = () => window.scrollY >= window.innerHeight*.2 ? setScrolled(true) : setScrolled(false) 
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    active ? setNavBarActiveClass('') : setNavBarActiveClass('hidden')
+    window.addEventListener('scroll', handleScroll)
+    active ? setNavBarActiveClass(true) : setNavBarActiveClass(false)
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [active, scrolled])
 
   return (
-    <div className={`w-full fixed top-0 z-10 ${scrolled ? 'bg-skyblue-500' : ''} transition-colors duration-300 ease-in-out`}>
+    <div className={`w-full fixed top-0 z-10 ${scrolled || navBarActiveClass ? 'bg-skyblue-500' : ''} transition-colors duration-300 ease-in-out`}>
       <nav
         className='w-full max-w-md sm:max-w-none md:max-w-4/5 mx-auto flex items-center justify-between flex-wrap px-2 sm:px-4 md:px-2 py-6'
         role='navigation'
@@ -35,13 +35,13 @@ const Navbar = () => {
             <svg className='fill-current h-3 w-3' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><title>Menu</title><path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'/></svg>
           </button>
         </div>
-        <div className={`w-full block sm:flex sm:items-center sm:w-auto ${navBarActiveClass}`}>
-          <ul className='text-m sm:flex-grow'>
+        <div className={`w-full block sm:flex sm:items-center sm:w-auto ${!navBarActiveClass && 'hidden'} z-10`}>
+          <ul className='text-m sm:flex-grow text-center'>
             <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 lg:px-4'><a href='#home'>Home</a></li>
             <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 lg:px-4'><a href='#find'>Find Hotel</a></li>
             <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 lg:px-4'><a href='#about'>About Us</a></li>
             <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 lg:px-4'><a href='#contact'>Contact Us</a></li>
-            <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 btn btn-transparent mb-0'><a href='#contact'>Login</a></li>
+            <li className='block mt-4 sm:inline-block sm:mt-0 text-white hover:text-white mr-4 mb-0'><a href='#contact' className='btn btn-transparent'>Login</a></li>
           </ul>      
         </div>
       </nav>  

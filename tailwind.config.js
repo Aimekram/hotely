@@ -27,6 +27,9 @@ module.exports = {
       maxWidth: {
         '4/5': '80%',
       },
+      width: {
+        'fit-content': 'fit-content',
+      },
     },
   },
   variants: {},

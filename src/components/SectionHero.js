@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SearchBox from "./SearchBox"
+import SearchBox from './SearchBox'
 
 const Hero = ({ title, subheading, image}) => (
     <section id='home' className='relative min-h-130vh' style={{
@@ -11,9 +11,9 @@ const Hero = ({ title, subheading, image}) => (
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
         }}>
-        <div className="absolute bottom-0">
-            <h1 className="" >{title}</h1>
-            <h3 className="">{subheading} </h3>
+        <div className='absolute bottom-0'>
+            <h1 className='' >{title}</h1>
+            <h3 className=''>{subheading} </h3>
         </div>
         <SearchBox />
         {/* <div>Flying texts</div> */}

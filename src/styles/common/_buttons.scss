@@ -11,7 +11,7 @@
 }
 
 .btn-transparent {
-    @apply bg-transparent border border-solid border-white;
+    @apply bg-transparent border border-solid border-white w-fit-content;
 }
 
 .btn-transparent:hover {
