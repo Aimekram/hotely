@@ -1,25 +1,5 @@
 import React, { useReducer } from 'react'
-
-// get dates for inputs placeholders
-const getDate = (day) => {
-    const currentDate = new Date()
-    switch (day) {
-        case 'today': {
-            let today = currentDate.toISOString().substr(0, 10)
-            return today
-        }
-        case 'tomorrow': {
-            let tomorrow = currentDate
-            tomorrow.setDate(tomorrow.getDate()+1)
-            return tomorrow.toISOString().substr(0, 10)
-        }
-        case 'oneWeekLater': {
-            let oneWeekLater = currentDate
-            oneWeekLater.setDate(oneWeekLater.getDate()+7)
-            return oneWeekLater.toISOString().substr(0, 10)
-        }
-    }
-}
+import { getDate } from '../utils/getDate'
 
 // helpers for controlling form's elements
 const initialState = {
@@ -64,8 +44,8 @@ const SearchBox = () => {
             </div>
             <div className='mb-4'>
                 <label htmlFor='guestsNr'>Guests</label>
-                <select id='guestsNr' name='guestsNr' defaultValue='How many guests?' value={guestsNr} onChange={onChange}>
-                    <option value='' hidden>How many guests?</option>
+                <select id='guestsNr' name='guestsNr' value={guestsNr} onChange={onChange}>
+                    <option value='How many guests?' hidden>How many guests?</option>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>
