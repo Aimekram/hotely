@@ -20,13 +20,13 @@ const reducer = (state, { field, value }) => {
 const SearchBox = () => {
     // control form elements
     const [ state, dispatch ] = useReducer(reducer, initialState)
-    const onChange = (e) => dispatch({ field: e.target.name, value: e.target.value })
+    const onChange = e => dispatch({ field: e.target.name, value: e.target.value })
     const { destination, checkInDate, checkOutDate, guestsNr, payOnCheckIn } = state
 
     return (
         <form className = 'w-full max-w-md bg-white rounded-xl px-8 pt-8 pb-10 relative mt-20 md:mt-0 md:absolute mx-auto md:top-1/5 md:left-1/10'>
             <div className='mb-4'>
-                <label htmlFor='destination'>Where do you go?</label>
+                <label htmlFor='destination' className='font-bold'>Where do you go?</label>
                 <div className='relative'>
                     <input id='destination' name='destination' type='text' placeholder='try "Singapore"' value={destination} onChange={onChange} />
                     <img src='/img/map-pin.svg' alt='location icon' className='absolute right-0 top-0 m-4' />
@@ -34,18 +34,18 @@ const SearchBox = () => {
             </div>
             <div className='mb-4 flex flex-col sm:flex-row flex-wrap'>
                 <div className='flex flex-col flex-no-wrap sm:mr-4'>
-                    <label htmlFor='checkInDate'>Check in</label>
+                    <label htmlFor='checkInDate' className='font-bold'>Check in</label>
                     <input id='checkInDate' name='checkInDate' type='date' min={getDate('today')} value={checkInDate} onChange={onChange} />
                 </div>
                 <div className='flex flex-col flex-no-wrap'>
-                    <label htmlFor='checkOutDate'>Check out</label>
+                    <label htmlFor='checkOutDate' className='font-bold'>Check out</label>
                     <input id='checkOutDate' name='checkOutDate' type='date' min={getDate('tomorrow')} value={checkOutDate} onChange={onChange} />
                 </div>
             </div>
             <div className='mb-4'>
-                <label htmlFor='guestsNr'>Guests</label>
+                <label htmlFor='guestsNr' className='font-bold'>Guests</label>
                 <select id='guestsNr' name='guestsNr' value={guestsNr} onChange={onChange}>
-                    <option value='How many guests?' hidden>How many guests?</option>
+                    <option value='How many guests?' hidden className='text-blue-500'>How many guests?</option>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>
