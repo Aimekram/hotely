@@ -1,5 +1,5 @@
 .btn {
-    @apply text-white font-bold py-4 px-8 my-4 rounded-lg cursor-pointer;
+    @apply text-white font-bold py-4 px-8 my-4 rounded-lg cursor-pointer outline-none;
 }
 
 .btn-orange {
@@ -11,7 +11,7 @@
 }
 
 .btn-transparent {
-    @apply bg-transparent border border-solid border-white w-fit-content;
+    @apply bg-transparent border border-solid border-white w-fit-content outline-none;
 }
 
 .btn-transparent:hover {
