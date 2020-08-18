@@ -24,7 +24,7 @@ const Navbar = () => {
   }, [active, scrolled])
 
   return (
-    <div className={`w-full fixed top-0 z-10 ${scrolled || navBarActiveClass ? 'bg-skyblue-500' : ''} transition-colors duration-300 ease-in-out`}>
+    <div className={`w-full fixed top-0 z-10 ${scrolled || navBarActiveClass ? 'bg-softgreen-500' : ''} transition-colors duration-300 ease-in-out`}>
       <nav
         className='w-full max-w-md sm:max-w-none md:max-w-4/5 mx-auto flex items-center justify-between flex-wrap px-4 md:px-2 py-6'
         role='navigation'

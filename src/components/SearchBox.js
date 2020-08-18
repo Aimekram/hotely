@@ -33,11 +33,11 @@ const SearchBox = () => {
                 </div>
             </div>
             <div className='mb-4 flex flex-col sm:flex-row flex-wrap'>
-                <div className='flex flex-col flex-no-wrap sm:mr-4'>
+                <div className='flex flex-col flex-no-wrap sm:mr-4 max-w-180px'>
                     <label htmlFor='checkInDate' className='font-bold'>Check in</label>
                     <input id='checkInDate' name='checkInDate' type='date' min={getDate('today')} value={checkInDate} onChange={onChange} />
                 </div>
-                <div className='flex flex-col flex-no-wrap'>
+                <div className='flex flex-col flex-no-wrap max-w-180px'>
                     <label htmlFor='checkOutDate' className='font-bold'>Check out</label>
                     <input id='checkOutDate' name='checkOutDate' type='date' min={getDate('tomorrow')} value={checkOutDate} onChange={onChange} />
                 </div>
